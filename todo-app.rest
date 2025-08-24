@@ -1,0 +1,50 @@
+### 
+GET http://localhost:5003/
+
+
+### Register a new user
+POST http://localhost:5003/auth/register
+Content-Type: application/json
+
+{
+    "username": "testing purpose",
+    "password": "testpassword"
+} 
+
+###. Login with the registered user
+POST http://localhost:5003/auth/login
+Content-Type: application/json
+
+{
+    "username": "mis",
+    "password": "testpassword"
+} 
+
+### Get all todos for the logged-in user
+GET http://localhost:5003/todos
+Authorization :eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiaWF0IjoxNzU1OTc4MDE3LCJleHAiOjE3NTU5ODUyMTd9.Ot9BfxPjOI2b0m-pd6Td2v1sqdG2Zjflcfg_K26welw
+
+### Create a new todo
+POST http://localhost:5003/todos
+Content-Type: application/json
+Authorization :eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiaWF0IjoxNzU1OTc4MDE3LCJleHAiOjE3NTU5ODUyMTd9.Ot9BfxPjOI2b0m-pd6Td2v1sqdG2Zjflcfg_K26welw
+
+{
+    "task": "New Todo 1",
+    "description": "This is a new todo item 1"
+}
+
+### Update a todo by ID
+PUT http://localhost:5003/todos/4
+Content-Type: application/json
+Authorization :eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiaWF0IjoxNzU1OTc4MDE3LCJleHAiOjE3NTU5ODUyMTd9.Ot9BfxPjOI2b0m-pd6Td2v1sqdG2Zjflcfg_K26welw
+
+{
+    "completed": 1
+}   
+
+
+### Delete a todo by ID
+DELETE  http://localhost:5003/todos/5
+Content-Type: application/json
+Authorization :eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiaWF0IjoxNzU1OTc4MDE3LCJleHAiOjE3NTU5ODUyMTd9.Ot9BfxPjOI2b0m-pd6Td2v1sqdG2Zjflcfg_K26welw
